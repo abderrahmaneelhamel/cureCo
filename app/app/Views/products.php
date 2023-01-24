@@ -43,10 +43,10 @@
 <div style="width: 100% !important; overflow-x: scroll;">
 <div id="adding" style="position: fixed; z-index: 990;top: 0px; background: transparent;backdrop-filter: blur(10px);width: 100%;height: 100%;display: none;align-items: center;justify-content: center;">
     <div style="border-radius: 20px; background-color: white;width: 70%;height: 70%;display: flex;align-items: center;justify-content: center;">
-        <a href="products"><img style="position: absolute;top: 120px;left: 1006px;" onclick="clossse()" src="../app/Views/images/close.png"></a>
+        <a href="products"><img class="close" onclick="clossse()" src="../app/Views/images/close.png"></a>
                      <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;margin:10px;">
                         <form method="post" onsubmit="return submitProduct()" id="ProductForm" style="width:60vw; min-width:300px ;" enctype="multipart/form-data">
-                            <div class="multiply" style="height : 330px; overflow-y: scroll; overflow-x: hidden;">
+                            <div class="multiply">
                             <h3 style="color:rgb(36 128 33);">ADD A NEW PRODUCT</h3>
                               <div class="row">
                                 <div class="row">
@@ -84,9 +84,9 @@
                                 </div>
                               </div>
                             </div>
-                            <button class="btn btn-outline-success mt-1" onclick="multiply()">+</button>
+                            <button class="btn btn-outline-success mt-1 multi" onclick="multiply()">+</button>
                         </div>
-                        <div style="flex-direction: column; display: flex;">
+                        <div class="srt">
                             <button type="submit" name="submit" class="btn btn-outline-success mb-4" >Save</button>
                             <a href="products" class="btn btn-outline-dark mb-4">Cancel</a>
                         </div>
@@ -95,6 +95,7 @@
     </div>
   </div>
 </div>
+<div style="width: 100% !important; overflow-x: scroll;">
 <table class="table table-light table-striped table-hover text-center">
   <thead class="table-light">
     <tr>
@@ -134,6 +135,7 @@
     
   </tbody>
 </table>
+</div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2
 .2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

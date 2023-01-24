@@ -138,7 +138,6 @@
       </div>
     </footer>
   </div>
-
   <script src="app/Views/js/jquery-3.3.1.min.js"></script>
   <script src="app/Views/js/jquery-ui.js"></script>
   <script src="app/Views/js/popper.min.js"></script>

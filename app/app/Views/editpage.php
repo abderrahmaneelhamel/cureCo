@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app/Views/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="app/Views/css/style.css">
+    <link rel="stylesheet" href="app/Views/css/style2.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
     <script src="app/Views/bootstrap-5.2.2-dist/js/bootstrap.js"></script>
@@ -50,12 +51,13 @@
                     </div>
                     <div class="row">
                         <label class="log" style="color:rgb(36 128 33) ;">Product Image</label>
+                        <img style="width: 90px;" src="app/Views/<?php echo $row['image'] ?>" >
                         <input type="file" class="form-control" name="image">
                     </div>
                     <div class="row">
                         <label class="log" style="color:rgb(36 128 33) ;">Category</label>
                         <select class="form-control" name="category" id="category" onChange="getSubCat(this.value);" required="">
-                            <option value="">Select Category </option>
+                            <option value="<?php echo $row['id'] ?>"><?php echo $row['category'] ?> (Selected)</option>
                             <?php
                             foreach ($ret->fetch_all(MYSQLI_ASSOC) as $row) {
                             ?>
@@ -68,10 +70,10 @@
                 </div>
                 
             </div>
-            <div class="col ret">
-                    <div style="margin-left: 450px; margin-top: 20px;">
-                    <input  type="submit" class="btn btn-outline-success mb-4" name="submit" value="Update">
-                    <a href="products" class="btn btn-outline-dark mb-4">Cancel</a>
+            <div>
+                <div class="coli">
+                <input  type="submit" class="btn btn-outline-success mb-4" name="submit" value="Update">
+                <a href="products" class="btn btn-outline-dark mb-4">Cancel</a>
             </div>
             </form>
         </div>

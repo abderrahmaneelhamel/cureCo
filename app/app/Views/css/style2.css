@@ -3,6 +3,61 @@ body {
   color: #0c0c0c;
   background-color: #ffffff;
 }
+.coli{
+  margin-left: 450px;
+  margin-top: 20px;
+}
+.multiply{
+  height : 330px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.srt{
+  flex-direction: column;
+  display: flex;
+}
+.stat{
+  display: flex;
+  flex-direction: row;
+}
+.close{
+  position: absolute;
+  top: 120px;
+  left: 1006px;
+}
+@media only screen and (max-width: 400px){
+  .coli{
+    margin-left: 21px;
+    margin-top: 20px;
+  }
+  .multiply{
+    margin-left: 15%;
+    height: 440px;
+    width: 75%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .srt{
+    flex-direction: row;
+    display: flex;
+    position: absolute;
+    top: 77%;
+  }
+  .multi{
+    position: absolute;
+    top: 76.5%;
+    left: 23.5%;
+  }
+  .stat{
+    display: flex;
+    flex-direction: column;
+  }
+  .close{
+    position: absolute;
+    top: 135px;
+    left: 270px;
+  }
+}
 .ul{
   width:1000px;
   display: flex; 
@@ -1099,7 +1154,6 @@ a:focus {
   }
   .disconnect {
     position: relative;
-    left: 14%;
     width: 130px;
     height: 40px;
     display: flex;

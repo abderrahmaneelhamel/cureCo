@@ -55,7 +55,7 @@
                 <li><a href="about">About</a></li>
                 <li><a href="contact">Contact</a></li>
                 <?php if(isset($_SESSION["user"])){
-                        echo '<li  class="scroll-to-section nav-item"><a style="justify-content: center; color: #ffffff;" id="nvrb" class="nvr disconnect" href="disconnect">Logout</a></li>';
+                        echo '<li  class="scroll-to-section nav-item"><a style="justify-content: center; color: #ffffff;" id="nvrb" class="nvr disconnect d-flex align-items-center" href="disconnect">Logout</a></li>';
                   }else{
                         echo '<li  class="scroll-to-section nav-item"><a id="nvrb" class="nvr" href="login">Login</a></li>';
                   }

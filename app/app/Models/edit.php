@@ -22,7 +22,7 @@ class edit {
     function list($ID){
         $test = new connection;
         $conn = $test->connection();
-        $sql="SELECT * FROM `products` WHERE `id` =$ID LIMIT 1";
+        $sql="SELECT p.label, p.price , p.quantity  , p.image, p.quantity , c.category , c.id FROM category c , products p where c.id=p.category and p.quantity > 0 AND p.`id` = $ID LIMIT 1;";
         $resultat = mysqli_query($conn,$sql);
         return $resultat;
     }

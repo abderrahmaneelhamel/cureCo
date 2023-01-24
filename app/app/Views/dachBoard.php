@@ -21,7 +21,7 @@
 <body>
 <nav style="background-color:black; display:flex; justify-content:space-between; width:100%;" class="res navbar navbar-expand-lg bg-dark">
 <div style="justify-content: space-between;" class="container-fluid">
-<div>
+<div style="display:flex; justify-content: space-between; width:95%;">
     <a style="color: white;" class="navbar-brand" href="home">CureCo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
           <a style="color: white;" class="nav-link active" aria-current="page" href="dachBoard">Home</a>
         </li>
         <li class="nav-item">
-          <a style="color: white;" class="nav-link" href="products">Products management</a>
+          <a style="color: white;" class="nav-link mx-1" href="products">Products</a>
         </li>
         <li class="nav-item">
           <a class="disconnected btn btn-primary" style="width:120px;" href="disconnect" >Logout</a>
@@ -44,11 +44,13 @@
 </nav>
 <div class="d-flex flex-direction-column">
 <div style="width: 580px;" class="d-flex flex-wrap justify-content-start m-4">
-<label class="log" style="color:rgb(10 82 189); width: 27rem; "><h1>DachBoard</h1></label>
-<label class="log" style="color:rgb(10 82 189); width: 27rem;"><h3>1.General Stastics :</h3></label>
+<div class="d-flex flex-column">
+  <label class="log" style="color:rgb(10 82 189); width: 17rem; "><h1>DachBoard</h1></label>
+  <label class="log" style="color:rgb(10 82 189); width: 17rem;"><h3>1.General Stastics :</h3></label>
 <?php
   $row1 = mysqli_fetch_assoc($resultat1);
 ?>
+<div class="stat">
 <div class="card border-primary m-2" style="width: 17rem;">
   <div class="card-header bg-transparent border-primary">Products</div>
   <div class="card-body text-primary">
@@ -66,7 +68,8 @@
     <h1 class="card-text"><?php echo $row2['COUNT(*)']-1 ?></h1>
   </div>
 </div>
-
+</div>
+</div>
 </div>
 <div style="width: 50%;">    
 </div> 
