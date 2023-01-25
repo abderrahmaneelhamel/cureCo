@@ -3,7 +3,7 @@
 
 <head>
     <title>CureCo</title>
-    <link rel="shortcut icon" href="app/Views/images/logo1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="app/Views/images/logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,9 +37,17 @@
     </div>
   </div>
 </nav>
-<div>
-    <a onclick="openn()" class="btn btn-outline-success m-2 mb-3">ADD PRODUCT</a>
+<div class="d-flex align-items-baseline my-2">
+    <div><a onclick="openn()" class="btn btn-outline-success m-2 mb-3">ADD PRODUCT</a></div>
+    <div class="my-2">
+  <h3>Live Search</h3>
+  <form>
+      <input type="text" size="30" onkeyup="showResult(this.value)">
+      <div style="color: black; max-height: 50px; min-height: 0px; overflow-y:scroll;" id="livesearch"></div>
+  </form>
 </div>
+</div>
+
 <div style="width: 100% !important; overflow-x: scroll;">
 <div id="adding" style="position: fixed; z-index: 990;top: 0px; background: transparent;backdrop-filter: blur(10px);width: 100%;height: 100%;display: none;align-items: center;justify-content: center;">
     <div style="border-radius: 20px; background-color: white;width: 70%;height: 70%;display: flex;align-items: center;justify-content: center;">
@@ -56,12 +64,12 @@
                                 </div>
                                 <div class="row">
                                     <label class="log" style="color:rgb(36 128 33);">quantity</label>
-                                    <input type="text" id="qte" class="form-control" name="qte[]" placeholder="quantity">
+                                    <input type="number" id="qte" class="form-control" name="qte[]" placeholder="quantity">
                                     <label id="qteMsg" for="qte" style="color: red;"></label>
                                 </div>
                                 <div class="row">
                                     <label class="log" style="color:rgb(36 128 33);">Product Price</label>
-                                    <input type="text" id="price" class="form-control" name="price[]" placeholder="Price">
+                                    <input type="number" id="price" class="form-control" name="price[]" placeholder="Price">
                                     <label id="priceMsg" for="price" style="color: red;"></label>
                                 </div>
                                 <div class="row">
@@ -159,12 +167,12 @@
                           </div>
                           <div class="row">
                               <label class="log" style="color:rgb(36 128 33);">quantity</label>
-                              <input type="text" id="qte" class="form-control" name="qte[]" placeholder="quantity"required>
+                              <input type="number" id="qte" class="form-control" name="qte[]" placeholder="quantity"required>
                               <label id="qteMsg" for="qte" style="color: red;"></label>
                           </div>
                           <div class="row">
                               <label class="log" style="color:rgb(36 128 33);">Product Price</label>
-                              <input type="text" id="price" class="form-control" name="price[]" placeholder="Price"required>
+                              <input type="number" id="price" class="form-control" name="price[]" placeholder="Price"required>
                               <label id="priceMsg" for="price" style="color: red;"></label>
                           </div>
                           <div class="row">
@@ -204,6 +212,28 @@
         .catch(err => console.error(err));
 
   }
+
+function showResult(str) {
+  if (str.length==0) {
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    return;
+  }
+  let data = [];
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      data = xmlhttp.response;
+      for(var i=0 ; i < data.length ; i++){
+        document.getElementById("livesearch").innerHTML+= "name: "+data[i].label+"<br>"+"quantity: "+data[i].quantity+"<br><hr>";
+      }
+    }
+  }
+  xmlhttp.open("GET","http://cure.co/app/Models/livesearch.php?q="+str,true);
+  xmlhttp.responseType = "json";
+  xmlhttp.send();
+}
+
 </script>
 </body>
 

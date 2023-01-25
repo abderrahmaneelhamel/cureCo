@@ -3,7 +3,7 @@
 
 <head>
     <title>CureCo</title>
-    <link rel="shortcut icon" href="app/Views/images/logo1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="app/Views/images/logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
 <nav style="background-color:black; display:flex; justify-content:space-between; width:100%;" class="res navbar navbar-expand-lg bg-dark">
 <div style="justify-content: space-between;" class="container-fluid">
 <div style="display:flex; justify-content: space-between; width:95%;">
-    <a style="color: white;" class="navbar-brand" href="home">CureCo</a>
+    <a style="color: white;" class="navbar-brand" href="home"><img style="width: 8%;" src="app/Views/images/logo.png"> CureCo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,7 +36,7 @@
           <a style="color: white;" class="nav-link mx-1" href="products">Products</a>
         </li>
         <li class="nav-item">
-          <a class="disconnected btn btn-primary" style="width:120px;" href="disconnect" >Logout</a>
+          <a class="disconnected btn btn-success" style="width:120px;" href="disconnect" >Logout</a>
         </li>
       </ul>
     </div>
@@ -45,15 +45,15 @@
 <div class="d-flex flex-direction-column">
 <div style="width: 580px;" class="d-flex flex-wrap justify-content-start m-4">
 <div class="d-flex flex-column">
-  <label class="log" style="color:rgb(10 82 189); width: 17rem; "><h1>DachBoard</h1></label>
-  <label class="log" style="color:rgb(10 82 189); width: 17rem;"><h3>1.General Stastics :</h3></label>
+  <label class="log" style="color:rgb(36 128 33); width: 17rem; "><h1>DachBoard</h1></label>
+  <label class="log" style="color:rgb(36 128 33); width: 17rem;"><h3>1.General Stastics :</h3></label>
 <?php
   $row1 = mysqli_fetch_assoc($resultat1);
 ?>
 <div class="stat">
-<div class="card border-primary m-2" style="width: 17rem;">
-  <div class="card-header bg-transparent border-primary">Products</div>
-  <div class="card-body text-primary">
+<div class="card border-success m-2" style="width: 17rem;">
+  <div class="card-header bg-transparent border-success">Products</div>
+  <div class="card-body text-success">
     <h5 class="card-title">Number of Products:</h5>
     <h1 class="card-text"><?php echo $row1['COUNT(*)']?></h1>
   </div>
@@ -75,31 +75,35 @@
 </div> 
 </div>
 <div>
-  <h3 class="log pt-5 ml-4" style="color:rgb(10 82 189);">2.products Stastics :</h3>
+  <h3 class="log pt-5 ml-4" style="color:rgb(36 128 33);">2.products Stastics :</h3>
   <br>
   <canvas id="myChart"></canvas>
 </div>
+<?php
+  $row3 = mysqli_fetch_assoc($resultat3);
+  $row4 = mysqli_fetch_assoc($resultat4);
+  $row5 = mysqli_fetch_assoc($resultat5);
+?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
   const data = {
   labels: [
-    'January',
-    'February',
-    'March',
-    'April'
+    'GSL',
+    'Drugs',
+    'Pills',
   ],
   datasets: [{
     type: 'bar',
-    label: 'Bar Dataset',
-    data: [10, 20, 30, 40],
+    label: 'Products',
+    data: [<?= $row4['COUNT(*)']?>, <?= $row3['COUNT(*)']?>, <?= $row5['COUNT(*)']?>],
     borderColor: 'rgb(255, 99, 132)',
     backgroundColor: 'rgba(255, 99, 132, 0.2)'
   }, {
     type: 'line',
-    label: 'Line Dataset',
-    data: [50, 50, 40, 50],
+    label: 'Line Dataset of products',
+    data: [<?= $row4['COUNT(*)']?>, <?= $row3['COUNT(*)']?>, <?= $row5['COUNT(*)']?>],
     fill: false,
     borderColor: 'rgb(54, 162, 235)'
   }]

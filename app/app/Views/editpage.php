@@ -3,7 +3,7 @@
 
 <head>
     <title>CureCo</title>
-    <link rel="shortcut icon" href="app/Views/images/logo1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="app/Views/images/logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,16 +43,16 @@
                     </div>
                     <div class="row">
                         <label class="log" style="color:rgb(36 128 33) ;">quantite</label>
-                        <input type="text" class="form-control" name="qte" value="<?php echo $row['quantity'] ?>">
+                        <input type="number" class="form-control" name="qte" value="<?php echo $row['quantity'] ?>">
                     </div>
                     <div class="row">
                         <label class="log" style="color:rgb(36 128 33) ;">Product Price</label>
-                        <input type="text" class="form-control" name="price" value="<?php echo $row['price'] ?>">
+                        <input type="number" class="form-control" name="price" value="<?php echo $row['price'] ?>">
                     </div>
                     <div class="row">
                         <label class="log" style="color:rgb(36 128 33) ;">Product Image</label>
-                        <img style="width: 90px;" src="app/Views/<?php echo $row['image'] ?>" >
-                        <input type="file" class="form-control" name="image">
+                        <div id="att"><img style="width: 90px;" src="app/Views/<?php echo $row['image'] ?>" ></div>
+                        <input type="file" id="image" class="form-control" name="image">
                     </div>
                     <div class="row">
                         <label class="log" style="color:rgb(36 128 33) ;">Category</label>
@@ -80,6 +80,13 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2
 .2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+    document.getElementById("image").addEventListener("change", ()=>{
+        var temp = document.getElementById("image").value
+        var img = temp.replace('C:\\fakepath\\','');
+        document.getElementById("att").innerHTML = `<img style="width: 90px;" src="app/Views/images/${img}" >`
+    })
+</script>
 </body>
 
 </html>

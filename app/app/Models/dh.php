@@ -78,6 +78,27 @@ class dh {
         $resultat = mysqli_query($conn,$sql);
         return $resultat;
     }
+    function stc2(){
+        $test = new connection;
+        $conn = $test->connection();
+        $sql = "SELECT COUNT(*) FROM `products` WHERE products.category = 1;";
+        $resultat = mysqli_query($conn,$sql);
+        return $resultat;
+    }
+    function stc3(){
+        $test = new connection;
+        $conn = $test->connection();
+        $sql = "SELECT COUNT(*) FROM `products` WHERE products.category = 2;";
+        $resultat = mysqli_query($conn,$sql);
+        return $resultat;
+    }
+    function stc4(){
+        $test = new connection;
+        $conn = $test->connection();
+        $sql = "SELECT COUNT(*) FROM `products` WHERE products.category = 3;";
+        $resultat = mysqli_query($conn,$sql);
+        return $resultat;
+    }
     function search($name){
         $test = new connection;
         $conn = $test->connection();

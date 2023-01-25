@@ -3,7 +3,7 @@
 
 <head>
   <title>CureCo</title>
-  <link rel="shortcut icon" href="app/Views/images/logo1.png" type="image/x-icon">
+  <link rel="shortcut icon" href="app/Views/images/logo.png" type="image/x-icon">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -84,7 +84,7 @@
               <h2 class="sub-title">Effective Medicine, New Medicine Everyday</h2>
               <h1>Welcome To CureCo</h1>
               <p>
-                <a href="#" class="btn btn-primary px-5 py-3">Shop Now</a>
+                <a href="shop" class="btn btn-primary px-5 py-3">Shop Now</a>
               </p>
             </div>
           </div>

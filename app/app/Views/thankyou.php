@@ -3,7 +3,7 @@
 
 <head>
   <title>CureCo</title>
-  <link rel="shortcut icon" href="app/Views/images/logo1.png" type="image/x-icon">  <meta charset="utf-8">
+  <link rel="shortcut icon" href="app/Views/images/logo.png" type="image/x-icon">  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">

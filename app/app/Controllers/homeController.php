@@ -99,9 +99,9 @@ class HomeController{
         $test = new dh;
         $resultat1 = $test->stc();
         $resultat2 = $test->stc1();
-        // $resultat7 = $test->stc6($id);
-        // $list = new edit;
-        // $resultat8=$list->listR2();
+        $resultat3 = $test->stc2();
+        $resultat4 = $test->stc3();
+        $resultat5 = $test->stc4();
         include('app/Views/dachBoard.php');
     }
     public function edit($ID){
